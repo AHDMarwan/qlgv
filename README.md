@@ -8,7 +8,7 @@ The package is built for maximum flexibility, supporting both simple 2D paramete
 
 ## Installation and Setup
 
-Execute the following commands in a Colab or Jupyter cell to fetch and run the package generator script from the repository:
+Execute the following commands to install the package :
 
 ```bash
 # Clone the repository

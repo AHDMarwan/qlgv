@@ -17,8 +17,6 @@ Execute the following commands to install the package :
 
 ### Standard Import
 
-Once the generation cell has run and the package is built locally:
-
 ```python
 import qlgv
 import torch

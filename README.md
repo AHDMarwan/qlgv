@@ -6,30 +6,16 @@ The package is built for maximum flexibility, supporting both simple 2D paramete
 
 -----
 
-## 🚀 Installation and Setup
-
-Since QLGV is designed as a single-cell generator for Colab/Jupyter environments, installation involves fetching the generator script and executing it.
-
-### 1\. Colab/Jupyter Setup
+## Installation and Setup
 
 Execute the following commands in a Colab or Jupyter cell to fetch and run the package generator script from the repository:
 
 ```bash
 # Clone the repository
 !git clone https://github.com/AHDMarwan/qlgv.git
-
-# Navigate to the correct directory (assuming the generator script is at the root)
-# If the generator code is only provided in the issue thread, replace this step
-# with pasting the code directly into a cell.
-# Assuming you would normally run the generator code file (e.g., generator.py)
-# For the purpose of this README, we focus on the manual setup described previously:
 ```
 
-**Recommended Colab Method (Direct Execution):**
-
-Paste the entire package generator Python code into a single cell and execute it. This creates the `qlgv` directory locally and makes the package immediately available for import.
-
-### 2\. Standard Import
+### Standard Import
 
 Once the generation cell has run and the package is built locally:
 
@@ -38,7 +24,6 @@ import qlgv
 import torch
 import pandas as pd
 ```
-
 -----
 
 ## Key Features

@@ -1,6 +1,8 @@
 # QLGV: Quantum Local Gradient Variance Toolkit
 
-QLGV is a Python package designed for researchers and practitioners to analyze the **trainability** of **Variational Quantum Circuits (VQC)**, specifically by measuring the **Local Gradient Variance (LGV)**. A vanishing LGV is a strong indicator of the **Barren Plateau** phenomenon .
+QLGV is a Python package designed for researchers and practitioners to analyze the **trainability** of **Variational Quantum Circuits (VQC)**, specifically by measuring the **Local Gradient Variance (LGV)**.
+
+The Local Gradient Variance is a metric that quantifies the variance of gradient components with respect to a distribution of circuit parameters. A high LGV indicates that the trainability properties of the circuit are sensitive to parameter initialization, while a low LGV suggests more stable and reliable training dynamics.
 
 The package is built for maximum flexibility, supporting both simple 2D parameter tensors ($L \times W$) and complex 3D tensors ($L \times W \times G$) to accommodate various circuit architectures.
 
@@ -12,7 +14,9 @@ Execute the following commands to install the package :
 
 ```bash
 # Clone the repository
-!git clone https://github.com/AHDMarwan/qlgv.git
+git clone https://github.com/AHDMarwan/qlgv.git
+cd qlgv
+pip install -e .
 ```
 
 ### Standard Import
@@ -103,9 +107,9 @@ def rx_ry_rz_ansatz(params, wires):
     
     for l in range(L):
         for w in range(W):
-            qlgv.qml.RX(params[l, w, 0].item(), wires=wires[w]) # G=0
-            qlgv.qml.RY(params[l, w, 1].item(), wires=wires[w]) # G=1
-            qlgv.qml.RZ(params[l, w, 2].item(), wires=wires[w]) # G=2
+            qml.RX(params[l, w, 0].item(), wires=wires[w]) # G=0
+            qml.RY(params[l, w, 1].item(), wires=wires[w]) # G=1
+            qml.RZ(params[l, w, 2].item(), wires=wires[w]) # G=2
         
         # Linear CNOT entanglement layer
         if l < L - 1:
@@ -135,6 +139,6 @@ print(results_3d[['Layers', 'G_Params', 'LGV_Mean']])
 
 ## Development and Contribution
 
-Feel free to clone the repository, test the package, and propose enhancements\!
+Feel free to clone the repository, test the package, and propose enhancements!
 
 **Repository Link:** [https://github.com/AHDMarwan/qlgv](https://github.com/AHDMarwan/qlgv)
